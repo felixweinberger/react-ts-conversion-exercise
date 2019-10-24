@@ -13,6 +13,9 @@
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^24.0.19",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
     "babel-jest": "^24.5.0",
     "jest": "^24.5.0",
     "parcel-bundler": "^1.12.2",
@@ -21,6 +24,7 @@
   },
   "scripts": {
     "start": "parcel public/index.html",
-    "test": "jest --watch --env=jsdom"
+    "test": "jest --watch --env=jsdom",
+    "ts": "tsc --watch --pretty --noemit"
   }
 }
