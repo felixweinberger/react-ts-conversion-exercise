@@ -9,7 +9,7 @@ type AppState = {
   currentItem: TodoItem
 }
 
-class App extends Component<AppProps, AppState> {
+export class App extends Component<AppProps, AppState> {
   inputElement = React.createRef<HTMLInputElement>()
 
   constructor(props: AppProps) {
@@ -64,5 +64,3 @@ class App extends Component<AppProps, AppState> {
     )
   }
 }
-
-export default App
