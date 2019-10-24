@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
-import TodoList from './TodoList'
-import TodoItems from './TodoItems'
+import { TodoList } from './TodoList'
+import { TodoItems, TodoItem } from './TodoItems'
 
-class App extends Component {
-  inputElement = React.createRef()
+type AppState = {
+  items: TodoItem[],
+  currentItem: TodoItem
+}
 
-  constructor() {
-    super()
+class App extends Component<{}, AppState> {
+  inputElement: React.RefObject<HTMLInputElement> = React.createRef()
+
+  constructor(props) {
+    super(props)
     this.state = {
       items: [],
       currentItem: {
@@ -26,12 +31,11 @@ class App extends Component {
   }
 
   handleInput = e => {
-    const itemText = e.target.value
-    const currentItem = { text: itemText, key: Date.now() }
-    this.setState({
-      currentItem,
-    })
+    const itemText = e.target.value;
+    const currentItem = { text: itemText, key: Date.now().toString() }
+    this.setState({ currentItem })
   }
+
   addItem = e => {
     e.preventDefault()
     const newItem = this.state.currentItem
@@ -43,6 +47,7 @@ class App extends Component {
       })
     }
   }
+
   render() {
     return (
       <div className="App">

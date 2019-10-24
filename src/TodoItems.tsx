@@ -10,7 +10,7 @@ export type TodoItemsProps = {
   deleteItem(key: string): void,
 }
 
-class TodoItems extends Component<TodoItemsProps, {}> {
+export class TodoItems extends Component<TodoItemsProps, {}> {
   createTasks = item => {
     return (
       <li key={item.key} onClick={() => this.props.deleteItem(item.key)}>
@@ -25,5 +25,3 @@ class TodoItems extends Component<TodoItemsProps, {}> {
     return <ul className="theList">{listItems}</ul>
   }
 }
-
-export default TodoItems
