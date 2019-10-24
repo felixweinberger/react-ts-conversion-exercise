@@ -20,6 +20,7 @@
     "jest": "^24.5.0",
     "parcel-bundler": "^1.12.2",
     "prettier": "^1.16.4",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   },
   "scripts": {
