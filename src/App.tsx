@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import { TodoList } from './TodoList'
 import { TodoItems, TodoItem } from './TodoItems'
 
+type AppProps = {}
+
 type AppState = {
   items: TodoItem[],
   currentItem: TodoItem
 }
 
-class App extends Component<{}, AppState> {
+class App extends Component<AppProps, AppState> {
   inputElement: React.RefObject<HTMLInputElement> = React.createRef()
 
-  constructor(props) {
+  constructor(props: AppProps) {
     super(props)
     this.state = {
       items: [],

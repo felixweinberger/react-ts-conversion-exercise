@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-HTMLInputElement
+import React, { Component } from 'react';
 import { TodoItem } from './TodoItems';
 
 export type TodoListProps = {
