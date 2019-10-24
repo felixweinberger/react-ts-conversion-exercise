@@ -4,14 +4,15 @@ import { TodoItem } from './TodoItems';
 export type TodoListProps = {
   inputElement: React.RefObject<HTMLInputElement>,
   addItem(e: React.FormEvent<HTMLFormElement>): void,
-  handleInput(e: React.FormEvent<HTMLInputElement>): void,
+  handleInput(e: React.ChangeEvent<HTMLInputElement>): void,
   currentItem: TodoItem
 }
 
 export class TodoList extends Component<TodoListProps> {
   componentDidUpdate() {
-    this.props.inputElement.current.focus()
+    if (this.props.inputElement.current) this.props.inputElement.current.focus()
   }
+
   render() {
     return (
       <div className="todoListMain">

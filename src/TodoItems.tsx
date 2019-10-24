@@ -13,7 +13,7 @@ export type TodoItemsProps = {
 export type TodoItemsState = {}
 
 export class TodoItems extends Component<TodoItemsProps, TodoItemsState> {
-  createTasks = item => {
+  createTasks = (item: TodoItem) => {
     return (
       <li key={item.key} onClick={() => this.props.deleteItem(item.key)}>
         {item.text}

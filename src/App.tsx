@@ -10,7 +10,7 @@ type AppState = {
 }
 
 class App extends Component<AppProps, AppState> {
-  inputElement: React.RefObject<HTMLInputElement> = React.createRef()
+  inputElement = React.createRef<HTMLInputElement>()
 
   constructor(props: AppProps) {
     super(props)
@@ -23,7 +23,7 @@ class App extends Component<AppProps, AppState> {
     }
   }
 
-  deleteItem = key => {
+  deleteItem = (key: string) => {
     const filteredItems = this.state.items.filter(item => {
       return item.key !== key
     })
@@ -32,13 +32,13 @@ class App extends Component<AppProps, AppState> {
     })
   }
 
-  handleInput = e => {
+  handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const itemText = e.target.value;
     const currentItem = { text: itemText, key: Date.now().toString() }
     this.setState({ currentItem })
   }
 
-  addItem = e => {
+  addItem = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const newItem = this.state.currentItem
     if (newItem.text !== '') {
