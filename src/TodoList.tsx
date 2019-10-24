@@ -8,7 +8,7 @@ export type TodoListProps = {
   currentItem: TodoItem
 }
 
-export class TodoList extends Component<TodoListProps, {}> {
+export class TodoList extends Component<TodoListProps> {
   componentDidUpdate() {
     this.props.inputElement.current.focus()
   }
