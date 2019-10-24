@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
 
-class TodoList extends Component {
+import { TodoItem } from './TodoItems';
+
+export type TodoListProps = {
+  inputElement: React.RefObject<HTMLInputElement>,
+  addItem(): void,
+  handleInput(): void,
+  currentItem: TodoItem
+}
+
+class TodoList extends Component<TodoListProps, {}> {
   componentDidUpdate() {
     this.props.inputElement.current.focus()
   }

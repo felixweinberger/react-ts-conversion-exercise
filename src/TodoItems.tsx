@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 
-class TodoItems extends Component {
+export type TodoItem = {
+  key: string;
+  text: string;
+}
+
+export type TodoItemsProps = {
+  entries: TodoItem[],
+  deleteItem(key: string): void,
+}
+
+class TodoItems extends Component<TodoItemsProps, {}> {
   createTasks = item => {
     return (
       <li key={item.key} onClick={() => this.props.deleteItem(item.key)}>
